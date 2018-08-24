@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Escriba sus datos"
+        android:text="Introduce tus datos"
         android:layout_margin="10dp"
         android:gravity="center"
         android:padding="10dp"
@@ -21,22 +21,34 @@
 
     <!-- ID se usa para referenciar el edit text en java -->
     <EditText
-        android:id="@+id/et_nombre"
+        android:id="@+id/et_masa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="#1f4a74"
-        android:hint="Escriba su nombre"
+        android:hint="Masa"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
+        android:textColorHint="#ccc" />
+
+    <EditText
+        android:id= "@+id/et_altura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#1f4a74"
+        android:hint="Altura"
         android:textColorHint="#ccc"
         android:padding="10dp" />
 
     <Button
+        android:id="@+id/btn_calcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calcular"
         android:layout_marginTop="10dp"
-        android:id="@+id/btn_calcular"/>
+        android:text="Calcular" />
 
 
 </LinearLayout>

@@ -11,7 +11,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     TextView tv_titulo;
-    EditText et_nombre;
+    EditText et_masa;
+    EditText et_altura;
     Button btn_calcular;
 
     @Override
@@ -20,16 +21,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         tv_titulo =  findViewById(R.id.tv_titulo);
-        et_nombre = findViewById(R.id.et_nombre);
+        et_masa = findViewById(R.id.et_masa);
+        et_altura = findViewById(R.id.et_altura);
         btn_calcular = findViewById(R.id.btn_calcular);
+
 
         btn_calcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String nombre = et_nombre.getText().toString();
-                tv_titulo.setText("Hola "+ nombre);
+                double imc, masa, altura;
+                masa = Double.parseDouble(et_masa.getText().toString());
+                altura = Double.parseDouble(et_altura.getText().toString());
 
-                Toast.makeText(MainActivity.this, "hola"+nombre, Toast.LENGTH_LONG).show();
+                imc = masa/Math.pow(altura,2);
+                tv_titulo.setText("su indice de masa corporal es: "+ imc);
+
+                //String nombre = et_nombre.getText().toString();
+                Toast.makeText(MainActivity.this, "hola"+imc, Toast.LENGTH_LONG).show();
             }
         });
     }
